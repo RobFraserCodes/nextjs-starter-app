@@ -11,8 +11,8 @@ export default function MainNavigation() {
     const navigation = mainNavigation;
 
     useEffect(() => {
-        const handleClick = (e) => {
-            const target = e.target;
+        const handleClick = (e: Event) => {
+            const target = e.target as HTMLElement;
             if (!target.closest(".menu-btn")) setState(false);
     }});
     
