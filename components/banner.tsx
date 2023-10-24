@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { XMarkIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
+import { ThemeToggle } from './theme-toggle'
 
 export default function Banner() {
   return (
@@ -15,6 +16,7 @@ export default function Banner() {
                         Learn more <ArrowRightIcon className="w-4 h-4" />
                     </Link>
                 </p>
+                <ThemeToggle />
             </div>
             <button className="p-2 rounded-lg duration-150 hover:bg-indigo-500 ring-offset-2 focus:ring">
                 <XMarkIcon className="w-4 h-4" />

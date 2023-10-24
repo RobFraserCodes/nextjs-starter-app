@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image';
 import Link from 'next/link';
 import { mainNavigation } from '@/config/site';
 import { Bars3Icon, XMarkIcon, ArrowRightIcon } from '@heroicons/react/20/solid';
@@ -15,9 +14,7 @@ export default function MainNavigation() {
         const handleClick = (e) => {
             const target = e.target;
             if (!target.closest(".menu-btn")) setState(false);
-    };
-
-    document.addEventListener("click", handleClick);
+    }});
     
     const Brand = () => (
         <div className="flex items-center justify-between py-5 md:block">
