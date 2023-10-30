@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link';
 import { mainNavigation } from '@/config/site';
-import { Bars3Icon, XMarkIcon, ArrowRightIcon } from '@heroicons/react/20/solid';
+import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './ui/button';
+import Brand from './brand';
 
 export default function MainNavigation() {
     const [state, setState] = useState(false)
@@ -15,24 +16,6 @@ export default function MainNavigation() {
             const target = e.target as HTMLElement;
             if (!target.closest(".menu-btn")) setState(false);
     }});
-    
-    const Brand = () => (
-        <div className="flex items-center justify-between py-5 md:block">
-            <Link href="/">
-                <h1>NxtJS<span className="text-indigo-600">UI</span></h1>
-            </Link>
-            <div className="md:hidden">
-                <Button onClick={() => setState(!state)} className='menu-btn'>
-                    { state ? (
-                            <XMarkIcon className='w-6 h-6' />
-                        ) : (
-                            <Bars3Icon className='w-6 h-6' />
-                        )
-                    }
-                </Button>
-            </div>
-        </div>
-    )
 
     return (
         <div className='relative'>
@@ -42,7 +25,7 @@ export default function MainNavigation() {
                     <div className={`md:hidden ${state ? "mx-2 pb-5" : "hidden"}`}>
                         <Brand />
                     </div>
-                    <nav className={`pb-5 md:text-sm ${state ? "absolute top-0 inset-x-0 bg-black shadow-lg rounded-xl border mx-2 mt-2 md:shadow-none md:border-none md:mx-0 md:mt-0 md:relative md:bg-transparent" : ""}`}>
+                    <nav className={`pb-5 md:text-sm ${state ? "absolute top-0 inset-x-0 bg-primary shadow-lg rounded-xl border mx-2 mt-2 md:shadow-none md:border-none md:mx-0 md:mt-0 md:relative md:bg-transparent" : ""}`}>
                         <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8">
                             <Brand />
                             <div className={`flex-1 items-center mt-8 md:mt-0 md:flex ${state ? 'block' : 'hidden'} `}>

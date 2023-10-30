@@ -29,7 +29,7 @@ export default function Banner() {
                     </p>
                     <ThemeToggle />
                 </div>
-                <Button onClick={handleDismiss}>
+                <Button onClick={handleDismiss} className='bg-accent-foreground'>
                     <XMarkIcon className="w-4 h-4" />
                 </Button>
             </div>
